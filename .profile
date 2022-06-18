@@ -18,6 +18,8 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+### xylo04 additions ###
+
 # GPG SSH auth
 if [ -e $(gpgconf --list-dirs agent-ssh-socket) ] ; then
     SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

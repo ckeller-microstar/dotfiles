@@ -120,6 +120,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
+### xylo04 additions ###
+
 # git completion on Mac
 if [ -f /usr/local/etc/bash_completion ]; then
   . /usr/local/etc/bash_completion
