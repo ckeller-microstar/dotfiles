@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+cwd=${PWD##*/}
+echo "Checking github user/org $cwd repos against directories"
+
+repos=$(gh repo list "$cwd" --source --no-archived --json name --jq .[].name | sort)
+for r in $repos; do
+  if [ ! -d "$r" ]; then
+    echo "Checking out $r"
+    git clone "git@github.com:$cwd/$r.git"
+  fi
+done

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# https://github.com/drduh/YubiKey-Guide#switching-between-two-or-more-yubikeys
+# Run after switching yubikeys to reassociate the openpgp keys with the new serial number
+gpg-connect-agent "scd serialno" "learn --force" /bye
