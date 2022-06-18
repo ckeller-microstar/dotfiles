@@ -1,0 +1,31 @@
+[user]
+	name = Chris Keller
+	email = xylo04@gmail.com
+	signingkey = 3361CBCAE2DFAC8B
+[alias]
+	l = log --pretty=format:'%C(yellow)%h%C(white) %an <%ae> %>|(80)%ai%Creset%n%C(bold)%w(0,4,4)%s%C(reset)%n%+b'
+	ll = log --stat
+	lp = log -p
+	lg = log --graph --branches --boundary --oneline
+	lgm = log --graph --branches --boundary --oneline origin/main..
+	gjf = !~/git/dotfiles/gitgjf
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
+[push]
+	default = simple
+[pull]
+	rebase = true
+[url "ssh://git@github.com"]
+	insteadOf = https://github.com
+[commit]
+	gpgsign = true
+[url "git.debian.org:/git/"]
+	insteadOf = https://anonscm.debian.org/git/
+[url "git@salsa.debian.org:"]
+	insteadOf = https://salsa.debian.org/
+[init]
+	defaultBranch = main
