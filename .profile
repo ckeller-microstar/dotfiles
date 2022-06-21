@@ -72,6 +72,11 @@ if [ -d $HOME/.rvm ]; then
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 fi
 
+# Homebrew
+if [ -d /opt/homebrew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 EDITOR=vi
 GO111MODULE=on
 GPG_TTY=$(tty)
