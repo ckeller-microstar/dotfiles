@@ -1,0 +1,11 @@
+[Unit]
+Description=Kel-Agent
+Wants=rigctld.service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/home/chris/go/bin/kel-agent
+
+[Install]
+WantedBy=xsession.target
+

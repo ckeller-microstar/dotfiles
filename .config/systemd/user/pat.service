@@ -1,0 +1,10 @@
+[Unit]
+Description=Pat Winlink HTTP
+Wants=rigctld.service
+
+[Service]
+ExecStart=/home/chris/go/bin/pat http
+
+[Install]
+WantedBy=default.target
+

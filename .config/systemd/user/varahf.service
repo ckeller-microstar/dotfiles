@@ -1,0 +1,11 @@
+[Unit]
+Description=VARA HF
+PartOf=graphical-session.target
+
+[Service]
+Environment=WINEPREFIX="/home/chris/.local/share/wineprefixes/winlink"
+ExecStart=wine "%h/.local/share/wineprefixes/winlink/drive_c/VARA/VARA.exe"
+
+[Install]
+WantedBy=xsession.target
+

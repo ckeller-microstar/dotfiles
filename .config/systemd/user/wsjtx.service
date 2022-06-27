@@ -1,0 +1,11 @@
+[Unit]
+Description=WSJT-X
+Wants=kel-agent.service
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/wsjtx
+
+[Install]
+WantedBy=xsession.target
+

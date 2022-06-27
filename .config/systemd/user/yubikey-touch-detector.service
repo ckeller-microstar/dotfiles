@@ -1,0 +1,9 @@
+[Unit]
+Description=Yubikey Touch Detector
+
+[Service]
+ExecStart=%h/go/bin/yubikey-touch-detector --libnotify
+
+[Install]
+WantedBy=default.target
+
