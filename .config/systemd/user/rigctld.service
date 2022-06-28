@@ -1,9 +1,9 @@
 [Unit]
-Description=Rig Control
-After=network.target
+Description=rigctld
+Wants=flrig.service
 
 [Service]
-ExecStart=rigctld -m 3073 -r /dev/serial/by-id/usb-Silicon_Labs_CP2102_USB_to_UART_Bridge_Controller_IC-7300_02033608-if00-port0 -s 9600 -v
+ExecStart=rigctld -m 4
 
 [Install]
 WantedBy=default.target

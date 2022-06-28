@@ -1,0 +1,10 @@
+[Unit]
+Description=flrig
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=flrig
+
+[Install]
+WantedBy=xsession.target
+
