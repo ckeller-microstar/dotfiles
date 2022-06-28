@@ -1,6 +1,6 @@
 [Unit]
 Description=rigctld
-Wants=flrig.service
+After=flrig.service
 
 [Service]
 ExecStart=rigctld -m 4
