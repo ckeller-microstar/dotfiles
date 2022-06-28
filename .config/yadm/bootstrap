@@ -1,0 +1,14 @@
+#!/bin/sh
+
+system_type=$(uname -s)
+
+if [ "$system_type" = "Linux" ]; then
+  /bin/sh ./bootstrap.linux
+fi
+
+if [ "$system_type" = "Darwin" ]; then
+  /bin/sh ./bootstrap.darwin
+fi
+
+gpg --recv-keys 45D5980E3CBFFBA80483DEF63361CBCAE2DFAC8B
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+sudo apt update
+sudo apt dist-upgrade -y
+sudo apt install -y vim meld curl \
+  gnupg2 gnupg-agent scdaemon pcscd yubikey-manager yubikey-personalization-gui \
+  flrig fldigi libhamlib-utils 
+sudo systemctl enable pcscd.service && sudo systemctl start pcscd.service
+sudo usermod -a -G dialout,tty,audio,plugdev $USER
+
