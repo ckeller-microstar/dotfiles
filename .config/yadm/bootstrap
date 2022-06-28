@@ -1,13 +1,14 @@
 #!/bin/sh
 
 system_type=$(uname -s)
+this_path=$(dirname "$0")
 
 if [ "$system_type" = "Linux" ]; then
-  /bin/sh ./bootstrap.linux
+  /bin/sh "$this_path"/bootstrap.linux
 fi
 
 if [ "$system_type" = "Darwin" ]; then
-  /bin/sh ./bootstrap.darwin
+  /bin/sh "$this_path"/bootstrap.darwin
 fi
 
 gpg --recv-keys 45D5980E3CBFFBA80483DEF63361CBCAE2DFAC8B
