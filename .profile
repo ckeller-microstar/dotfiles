@@ -57,7 +57,7 @@ fi
 # sdkman
 if [ -d $HOME/.sdkman ]; then
     SDKMAN_DIR="$HOME/.sdkman"
-    [ -s "$HOME/.sdkman/bin/sdkman-init.sh" ] && \. "$HOME/.sdkman/bin/sdkman-init.sh"
+    [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
 
 # Node version manager
