@@ -16,6 +16,12 @@ function git_pull {
 	color git pull -q
 }
 
+# ctrl-c exits the entire script
+trap "echo; exit" INT
+
+# make sure security key is unlocked
+ssh -Nf git@github.com
+
 gitdirs=$(find $SRC -name .git -type d 2>/dev/null | sed 's#/.git$##g' | sort)
 for f in $gitdirs; do
 	git_pull $f
