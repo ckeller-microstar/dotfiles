@@ -136,7 +136,7 @@ fi
 
 # tmux
 if command -v tmux &> /dev/null ; then
-    if [[ "$TERM" != "screen" ]]; then
+    if [[ "$TERM" != "screen" && -z "$TERM_PROGRAM" && -z "$TERMINAL_EMULATOR" ]]; then
         # Attempt to discover a detached session and attach 
         # it, else create a new session
 
