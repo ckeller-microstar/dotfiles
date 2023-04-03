@@ -59,6 +59,7 @@ if [ -d $HOME/.sdkman ]; then
     SDKMAN_DIR="$HOME/.sdkman"
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
+JAVA_HOME="$(dirname $(dirname $(realpath $(which javac))))"
 
 # Node version manager
 if [ -d $HOME/.nvm ]; then
@@ -91,3 +92,4 @@ if [ -f /usr/lib/mc/mc.sh ]; then
 fi
 alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
 complete -F _quilt_completion $_quilt_complete_opt dquilt
+
