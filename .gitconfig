@@ -19,11 +19,5 @@
 	default = simple
 [pull]
 	rebase = true
-[url "ssh://git@github.com"]
-	insteadOf = https://github.com
-[url "git.debian.org:/git/"]
-	insteadOf = https://anonscm.debian.org/git/
-[url "git@salsa.debian.org:"]
-	insteadOf = https://salsa.debian.org/
 [init]
 	defaultBranch = main
