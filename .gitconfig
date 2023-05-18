@@ -10,11 +10,13 @@
 	lgm = log --graph --branches --boundary --oneline origin/main..
 	gjf = !~/git/dotfiles/gitgjf
 [diff]
-	tool = meld
-[difftool]
-	prompt = false
-[difftool "meld"]
-	cmd = meld "$LOCAL" "$REMOTE"
+	tool = vscode
+[difftool "vscode"]
+	cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+	tool = vscode
+[mergetool "vscode"]
+	cmd = code --wait $MERGED
 [push]
 	default = simple
 	autoSetupRemote = true
