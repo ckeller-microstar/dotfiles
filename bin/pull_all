@@ -8,13 +8,31 @@ PULL_ALL_CACHE_SECS=${PULL_ALL_CACHE_SECS:-600}
 cd $SRC
 SRC=`pwd`
 
+# colorize output
 color()(set -o pipefail;"$@" 2>&1>&3|sed $'s,.*,\e[31m&\e[m,'>&2)3>&1
 
 function git_pull {
 	cd $1
-	# if the repo has been updated in the last 10 minutes, skip it
-	[ $(($(date +%s) - $(stat -c %Y .git/FETCH_HEAD))) -lt $PULL_ALL_CACHE_SECS ] && return
-	echo $1 $(git symbolic-ref --short -q HEAD)
+	# if the repo has been updated in the past 10 minutes, skip it
+	if [ -f .git/FETCH_HEAD ]; then
+		now=$(date +%s)
+		updated=$(date -r .git/FETCH_HEAD +%s)
+		age=$(($now - $updated))
+		if [ $age -lt $PULL_ALL_CACHE_SECS ]; then
+			# echo "Skipping $1, FETCH_HEAD is $age seconds old"
+			return
+		fi
+	fi
+	branch=$(git symbolic-ref --short -q HEAD)
+    echo -n "$1 "
+    # if branch is not main or master, print it in red
+    if [ "$branch" != "main" ] && [ "$branch" != "master" ]; then
+        RED='\033[0;31m'
+        RESET='\033[0m'
+        echo -e "${RED}${branch}${RESET}"
+    else
+        echo "${branch}"
+    fi
 	color git fetch --all -Ppqtf
 	color git pull -q
 }
