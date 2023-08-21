@@ -8,8 +8,8 @@ winget install -e --id Microsoft.VisualStudioCode
 winget install -e --id Microsoft.WindowsTerminal
 winget install -e --id Git.Git
 winget install -e --id Google.Chrome
+winget install -e --id Mikrotik.Winbox
 # install source code pro font
-# install mikrotik winbox
 
 if ($installProgramming -eq "y") {
     winget install -e --id CoreyButler.NVMforWindows
