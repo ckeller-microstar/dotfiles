@@ -26,5 +26,6 @@ if ($installHam -eq "y") {
 }
 
 if ($installGames -eq "y") {
+    winget install -i --id GOG.Galaxy
     winget install -i --id Valve.Steam
 }
