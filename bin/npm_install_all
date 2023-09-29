@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+SRC=${1:-$HOME/src}
+START=`pwd`
+
+# update SRC to be an absolute path
+cd $SRC
+SRC=`pwd`
+echo "Installing npm deps for all projects in $SRC"
+
+npmdirs=$(find "${SRC}" -name package.json | grep -v node_modules | sed "s/package.json//g")
+for f in $npmdirs; do
+    echo "Installing npm deps for $f"
+    cd $f
+    npm install
+done
+cd "$START"
