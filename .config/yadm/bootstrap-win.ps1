@@ -15,6 +15,7 @@ if ($installProgramming -eq "y") {
     winget install -e --id CoreyButler.NVMforWindows
     winget install -e --id GoLang.Go
     winget install -e --id JetBrains.Toolbox
+    winget install -e --id GitHub.cli
 
     nvm install lts
     nvm use lts
