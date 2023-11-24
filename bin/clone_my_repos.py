@@ -5,8 +5,8 @@ from github import Github
 
 src_dir = os.getenv('SRC_ROOT', os.path.expanduser('~') + '/src')
 print ('Source directory is', src_dir)
-f = open(src_dir + "/github_pat.txt", "r")
-acces_token = f.read().strip()
+result = subprocess.run(['gh', 'auth', 'token'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+acces_token = result.stdout.decode('utf-8').strip()
 
 g = Github(acces_token)
 for r in g.get_user().get_repos():
