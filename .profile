@@ -59,7 +59,9 @@ if [ -d $HOME/.sdkman ]; then
     SDKMAN_DIR="$HOME/.sdkman"
     [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 fi
-JAVA_HOME="$(dirname $(dirname $(realpath $(which javac))))"
+if command -v javac &> /dev/null; then
+    JAVA_HOME="$(dirname $(dirname $(realpath $(which javac))))"
+fi
 
 # Node version manager
 if [ -d $HOME/.nvm ]; then
