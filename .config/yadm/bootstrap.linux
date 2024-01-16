@@ -36,7 +36,7 @@ sudo apt install -y $installPkgs
   
 sudo systemctl enable pcscd.service && sudo systemctl start pcscd.service
 sudo useradd docker
-sudo usermod -a -G dialout,tty,audio,plugdev,docker $USER
+sudo usermod -a -G dialout,tty,audio,plugdev,docker,vboxusers $USER
 
 if [ $installDev = "y" ]; then
   pip3 install -r ~/bin/requirements.txt
