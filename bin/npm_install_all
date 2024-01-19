@@ -2,6 +2,12 @@
 SRC=${1:-$HOME/src}
 START=`pwd`
 
+if [ -d $HOME/.nvm ]; then
+    NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+fi
+
+
 # update SRC to be an absolute path
 cd $SRC
 SRC=`pwd`
@@ -11,6 +17,7 @@ npmdirs=$(find "${SRC}" -name package.json | grep -v node_modules | sed "s/packa
 for f in $npmdirs; do
     echo "Installing npm deps for $f"
     cd $f
+    nvm use
     npm install
 done
 cd "$START"
