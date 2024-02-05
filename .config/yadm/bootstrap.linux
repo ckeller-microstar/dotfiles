@@ -24,7 +24,7 @@ if [ $installDev = "y" ]; then
 fi
 
 if [ $installHam = "y" ]; then
-  installPkgs="$installPkgs flrig fldigi libhamlib-utils"
+  installPkgs="$installPkgs flrig fldigi libhamlib-utils network-manager-l2tp-gnome network-manager-sstp-gnome"
 fi
 
 if [ $installGames = "y" ]; then
