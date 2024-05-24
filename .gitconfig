@@ -1,7 +1,7 @@
 [user]
 name = Chris Keller
 email = xylo04@gmail.com
-signingkey = 3361CBCAE2DFAC8B
+signingkey = C860B5A8D2AD6CA3
 
 [alias]
 l = log --pretty=format:'%C(yellow)%h%C(white) %an <%ae> %>|(80)%ai%Creset%n%C(bold)%w(0,4,4)%s%C(reset)%n%+b'
