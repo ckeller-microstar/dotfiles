@@ -168,3 +168,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 export PATH="/home/chris/.ebcli-virtual-env/executables:$PATH"
+
+alias tmx='tmux new -A -s $USER'
